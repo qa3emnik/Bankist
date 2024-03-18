@@ -52,35 +52,8 @@ btnScrollTo.addEventListener('click', function (e) {
     document.documentElement.clientWidth
   );
 
-  // Scrolling
-  // window.scrollTo(
-  //   s1coords.left + window.pageXOffset,
-  //   s1coords.top + window.pageYOffset
-  // );
-
-  // window.scrollTo({
-  //   left: s1coords.left + window.pageXOffset,
-  //   top: s1coords.top + window.pageYOffset,
-  //   behavior: 'smooth',
-  // });
-
   section1.scrollIntoView({ behavior: 'smooth' });
 });
-
-///////////////////////////////////////
-// Page navigation
-
-// document.querySelectorAll('.nav__link').forEach(function (el) {
-//   el.addEventListener('click', function (e) {
-//     e.preventDefault();
-//     const id = this.getAttribute('href');
-//     console.log(id);
-//     document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
-//   });
-// });
-
-// 1. Add event listener to common parent element
-// 2. Determine what element originated the event
 
 document.querySelector('.nav__links').addEventListener('click', function (e) {
   e.preventDefault();
@@ -129,7 +102,6 @@ const handleHover = function (e) {
   }
 };
 
-// Passing "argument" into handler
 nav.addEventListener('mouseover', handleHover.bind(0.5));
 nav.addEventListener('mouseout', handleHover.bind(1));
 
@@ -141,7 +113,6 @@ const navHeight = nav.getBoundingClientRect().height;
 
 const stickyNav = function (entries) {
   const [entry] = entries;
-  // console.log(entry);
 
   if (!entry.isIntersecting) nav.classList.add('sticky');
   else nav.classList.remove('sticky');
